@@ -1,0 +1,22 @@
+根本原因是Github默认使用了https方式来push代码，如果我们改为SSH方式就可以避免该问题。
+
+为此在shell终端 输入
+
+Git remote -v 
+
+可以看到形如以下的返回结果
+
+origin    https://github.com/***/***.git (fetch)
+origin    https://github.com/***/***.git (push)
+现在把它换成ssh方式就可以了
+
+首先，删除默认origin：git remote rm origin
+然后，git remote add origin git@github.com:***/***.git
+
+
+此时git remote -v 再查看修改
+
+origin    git@github.com:***/***.git (fetch)
+origin    git@github.com:***/***.git (push）
+
+这时再push代码就不会出现每次输入密码情况
