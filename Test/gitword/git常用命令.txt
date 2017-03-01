@@ -1,0 +1,12 @@
+1、配置本机git
+  git config --global user.name 
+  git config --global user.email 
+2、生成密钥
+  ssh-keygen -t rsa 
+3、找到密钥存储位置并将pub密钥打开复制粘贴到自己github的setting中
+4、检验是否链接上了github
+  ssh git@github.com 
+  //正常情况下，回显如下
+  PTY allocation request failed on channel 0
+  Hi plinx! You've successfully authenticated, but GitHub does not provide shell access.
+  Connection to github.com closed.
